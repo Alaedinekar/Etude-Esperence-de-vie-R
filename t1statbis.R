@@ -1,6 +1,6 @@
-## TP1 stats
+##part1
 
-##exo1
+
 
 EspVie = read.table("EsperanceVie.csv",sep=",",header=TRUE)
 esp_fra = which(EspVie$Pays=='FRA')
@@ -11,7 +11,7 @@ cor(y,x)
 summary(reg_lin)
 c = data.frame(x = c(2020,2025,2030,2050))
 predict(reg_lin,c)
-plot(x,y,xlab='Année',ylab='Esperance', pch = "x",col='blue',main='Regression esperance et année France')
+plot(x,y,xlab='AnnÃ©e',ylab='Esperance', pch = "x",col='blue',main='Regression esperance et annÃ©e France')
 abline(reg_lin)
 
 esp_jpn = which(EspVie$Pays=='JPN')
@@ -23,18 +23,18 @@ summary(reg_lin)
 f1 = data.frame(x = c(2020,2025,2030,2050))
 predict(reg_lin,f1)
 dev.new()
-plot(x,y,xlab='Année',ylab='Esperance',col='blue',main='Regression esperance et année Japon')
+plot(x,y,xlab='AnnÃ©e',ylab='Esperance',col='blue',main='Regression esperance et annÃ©e Japon')
 abline(reg_lin)
 
 
-##exo2
+##part2
 
 DepSante=read.table("DepSante2015.csv",sep=",",header=TRUE)
 x=DepSante$Esperance
 y=DepSante$Pays
 z=DepSante$Depense
 barplot(x,names=y,ylab="esperance de vie",xlab="Pays",main="Esperance de vie en fonction des pays")
-barplot(x,names=z,ylab="esperance de vie",xlab="depense Santé",main="Esperance de vie en fonction des dépenses santé")
+barplot(x,names=z,ylab="esperance de vie",xlab="depense SantÃ©",main="Esperance de vie en fonction des dÃ©penses santÃ©")
 mean(x)
 mean(z)
 sd(z)
@@ -46,7 +46,7 @@ dev.new()
 hist(z,breaks=c(500,1500,2500,3500,4500,5500,10000))
 
 reg_lin2 <- lm(x~z)
-plot(x,z,xlab='esperence de vie',ylab='depense santé',col='red',main= "graphique montrant l'evolution de l'esperance de vie en fonction des depenses santé")
+plot(x,z,xlab='esperence de vie',ylab='depense santÃ©',col='red',main= "graphique montrant l'evolution de l'esperance de vie en fonction des depenses santÃ©")
 
 t <- seq(70,90,0.1)
 Exi <- sum(x)
